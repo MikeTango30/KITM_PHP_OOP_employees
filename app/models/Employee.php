@@ -15,9 +15,8 @@ class Employee extends User
     protected $salary;
     protected $contractExpirationDate;
 
-    public function __construct($name, $lastName, $email, $phone, $position = null, $salary = null, $contractExpirationDate)
+    public function __construct($name, $lastName, $email, $phone, $position = null, $salary = null, $contractExpirationDate=null)
     {
-        parent::__construct($name, $lastName, $email, $phone);
         $this->name = $name;
         $this->lastName = $lastName;
         $this->email = $email;
@@ -25,6 +24,70 @@ class Employee extends User
         $this->position = $position;
         $this->salary = $salary;
         $this->contractExpirationDate = $contractExpirationDate;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getEmail()
+    {
+        return $this->email;
+    }
+
+    /**
+     * @param mixed $email
+     */
+    public function setEmail($email)
+    {
+        $this->email = $email;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getLastName()
+    {
+        return $this->lastName;
+    }
+
+    /**
+     * @param mixed $lastName
+     */
+    public function setLastName($lastName)
+    {
+        $this->lastName = $lastName;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * @param mixed $name
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getPhone()
+    {
+        return $this->phone;
+    }
+
+    /**
+     * @param mixed $phone
+     */
+    public function setPhone($phone)
+    {
+        $this->phone = $phone;
     }
 
     /**
@@ -75,7 +138,25 @@ class Employee extends User
         $this->contractExpirationDate = $contractExpirationDate;
     }
 
-    public function show()
+    /**
+     * @return mixed
+     */
+    public function getComment()
+    {
+        return $this->comment;
+    }
+
+    /**
+     * @param mixed $comment
+     */
+    public function setComment($comment)
+    {
+        $this->comment = $comment;
+    }
+
+
+
+    public function showAllData()
     {
         $result = [
             "Vardas" => $this->getName(),

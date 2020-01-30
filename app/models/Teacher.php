@@ -15,9 +15,8 @@ class Teacher extends User
     protected $subject;
     protected $type;
 
-    public function __construct($name, $lastName, $email, $phone, $classroom, $subject, $type)
+    public function __construct($name, $lastName, $email, $phone, $classroom=null, $subject=null, $type=null)
     {
-        parent::__construct($name, $lastName, $email, $phone);
         $this->name = $name;
         $this->lastName = $lastName;
         $this->email = $email;
@@ -25,6 +24,70 @@ class Teacher extends User
         $this->classroom = $classroom;
         $this->subject = $subject;
         $this->type = $type;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getEmail()
+    {
+        return $this->email;
+    }
+
+    /**
+     * @param mixed $email
+     */
+    public function setEmail($email)
+    {
+        $this->email = $email;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getLastName()
+    {
+        return $this->lastName;
+    }
+
+    /**
+     * @param mixed $lastName
+     */
+    public function setLastName($lastName)
+    {
+        $this->lastName = $lastName;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * @param mixed $name
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getPhone()
+    {
+        return $this->phone;
+    }
+
+    /**
+     * @param mixed $phone
+     */
+    public function setPhone($phone)
+    {
+        $this->phone = $phone;
     }
 
     /**
@@ -75,7 +138,25 @@ class Teacher extends User
         $this->type = $type;
     }
 
-    public function show(){
+    /**
+     * @return mixed
+     */
+    public function getComment()
+    {
+        return $this->comment;
+    }
+
+    /**
+     * @param mixed $comment
+     */
+    public function setComment($comment)
+    {
+        $this->comment = $comment;
+    }
+
+
+
+    public function showAllData(){
         $result = [
             "Vardas" => $this->getName(),
             "Pavardė" => $this->getLastName(),

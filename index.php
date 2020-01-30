@@ -35,9 +35,9 @@ $teacher = new Teacher(
                         "Kviestinis"
 );
 
-$employeeData = $employee->show();
-$pupilData = $pupil->show();
-$teacherData = $teacher->show();
+$employeeData = $employee->showAllData();
+$pupilData = $pupil->showAllData();
+$teacherData = $teacher->showAllData();
 
 ?>
 <!doctype html>
